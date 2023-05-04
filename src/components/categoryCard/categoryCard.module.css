@@ -1,0 +1,43 @@
+.categoryCard {
+  min-width: 100px;
+  height: 160px;
+  background: red;
+  border-radius: 32px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.welcomeCard {
+  min-width: 100px;
+  height: 160px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background: rgb(235, 44, 113);
+  background: linear-gradient(
+    90deg,
+    rgba(235, 44, 113, 1) 0%,
+    rgba(237, 27, 45, 1) 41%
+  );
+  border-radius: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.welcomIcon {
+  width: 100%;
+  max-width: 75px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: -10px;
+}
