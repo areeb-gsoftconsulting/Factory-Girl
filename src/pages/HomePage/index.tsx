@@ -5,6 +5,7 @@ import { Route } from "react-router";
 import Header from "../../components/Header";
 import CardsContainer from "../../components/Card/CardsContainer";
 import CategoryContainer from "../../components/CategoryContainer";
+import Cart from "../../components/Cart";
 
 const HomePage: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const HomePage: React.FC = () => {
           </IonCol>
           <IonCol size="2.5" sizeXl="3" size-lg="3" size-md="2">
             <div className={styles.cartDisplay}>
-              <h2>cart</h2>
+              <Cart />
             </div>
             <div className={styles.cartModalDisplay}>
               <h1>portion</h1>

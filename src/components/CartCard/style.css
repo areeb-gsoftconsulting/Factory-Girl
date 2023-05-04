@@ -1,0 +1,129 @@
+.cartCard {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  margin-bottom: 9px;
+  margin-top: 9px;
+  width: 100%;
+
+  /* max-width: 100%; */
+}
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 730px;
+  width: 100%;
+  margin: 0 auto;
+  min-width: 230px;
+  text-align: start;
+  padding: 0px 25px 0px 15px;
+}
+.cardBottomContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.cartActionBtn {
+  background-color: #ed1b2d;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.cartActionBtnTxtQuantity {
+  color: black;
+}
+.cartActionBtnTxt {
+  align-self: center;
+  color: white;
+}
+.cartItemName {
+  color: #353535;
+  font-size: 16px;
+  font-weight: 600;
+  max-width: 70%; /* set a width for the container */
+  white-space: nowrap; /* prevent line breaks */
+  overflow: hidden; /* hide any overflowing text */
+  text-overflow: ellipsis; /* display dots to indicate truncated text */
+}
+
+.cartImg {
+  width: 100%;
+  width: 75px;
+  height: auto;
+  height: 75px;
+  border-radius: 8px;
+}
+.cartCardBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ed1b2d;
+  width: 60px;
+  border-radius: 20px;
+  padding: 0 7px 0 7px;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+}
+.cartBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.user {
+  color: #ed1b2d;
+  font-weight: 600;
+  font-size: 12px;
+}
+.price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ed1b2d;
+}
+.extras {
+  font-size: 12px;
+  font-weight: 500;
+  width: 70%;
+  max-width: 70%; /* set a width for the container */
+  white-space: nowrap; /* prevent line breaks */
+  overflow: hidden; /* hide any overflowing text */
+  text-overflow: ellipsis; /* display dots to indicate truncated text */
+  color: #717171;
+}
+@media only screen and (max-width: 460px) {
+  .cartCard {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0px;
+    margin-bottom: 9px;
+    margin-top: 9px;
+    width: 100%;
+
+    /* max-width: 100%; */
+  }
+}
+@media only screen and (min-width: 921px) and (max-width: 1124px) {
+  .cartBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    padding-right: 36px;
+  }
+}
+.btn {
+  background-color: #ed1b2d;
+  height: fit-content;
+  align-self: center;
+  color: white;
+}

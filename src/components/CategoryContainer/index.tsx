@@ -12,7 +12,7 @@ const CategoryContainer = () => {
   const myDivRef: any = useRef(null);
   let isFirstRender: any = false;
   let loading = false;
-  let selectedRoute = "Menu";
+  let selectedRoute = "Men999u";
   let category = [
     {
       _id: "63ee1255198bd2d74a9320c6",
