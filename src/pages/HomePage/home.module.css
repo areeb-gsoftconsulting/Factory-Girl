@@ -1,0 +1,34 @@
+.mainHome {
+  --ion-background-color: white;
+}
+
+.cartDisplay {
+  min-width: 10vw;
+  display: none;
+}
+.mainGrid {
+  margin: -10px;
+}
+
+@media screen and (min-width: 992px) {
+  .cartDisplay {
+    min-width: 10vw;
+    display: block;
+  }
+}
+.cartModalDisplay {
+  min-width: 20vw;
+  display: none;
+}
+@media screen and (width: 0px) {
+  .cartModalDisplay {
+    min-width: 20vw;
+    display: block;
+  }
+}
+.avatar {
+  max-height: 300px;
+  width: "auto";
+  /* position: absolute;
+  bottom: 0; */
+}
