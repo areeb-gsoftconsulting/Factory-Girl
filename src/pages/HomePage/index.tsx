@@ -3,6 +3,7 @@ import styles from "./home.module.css";
 import { useContext, useEffect } from "react";
 import { Route } from "react-router";
 import Header from "../../components/Header";
+import CardsContainer from "../../components/Card/CardsContainer";
 
 const HomePage: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage: React.FC = () => {
         <IonRow>
           <IonCol size-lg="9" sizeXl="9" size-md="12" size-sm="12" sizeXs="12">
             <Header />
+            <CardsContainer />
           </IonCol>
           <IonCol size="2.5" sizeXl="3" size-lg="3" size-md="2">
             <div className={styles.cartDisplay}>

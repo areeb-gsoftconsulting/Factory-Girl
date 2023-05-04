@@ -1,0 +1,167 @@
+.spinnerclass {
+  margin: 0 auto;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.addBtnImage {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  bottom: 62px;
+  right: 4px;
+}
+.cards {
+  position: relative;
+  padding: 15px 15px 5% 15px;
+  background-color: white;
+  border-radius: 8px;
+  height: 290px;
+  cursor: pointer;
+}
+
+.cardsDisable {
+  position: relative;
+  padding: 15px 15px 5% 15px;
+  background-color: white;
+  border-radius: 8px;
+  height: 290px;
+}
+
+.itemTitle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 1.2;
+  max-height: 2.4em; /* Change this to adjust the number of lines */
+  color: #353535;
+  font-weight: 600;
+}
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: -6px;
+}
+.cardCategory {
+  font-size: 10px;
+  background-color: #ed1b2d;
+  color: white;
+  padding: 3px 10px 3px 10px;
+  border-radius: 18px;
+}
+.cardStock {
+  font-size: 10px;
+
+  background-color: #f6822b;
+  color: white;
+  padding: 4px 10px 4px 10px;
+  border-radius: 18px;
+}
+.cardStockAvailable {
+  font-size: 10px;
+
+  background-color: #00ab3a;
+  color: white;
+  padding: 3px 10px 3px 10px;
+  border-radius: 18px;
+}
+.cardPrice {
+  color: white;
+}
+.addBtn {
+  color: white;
+  background-color: #ed1b2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  position: absolute;
+  bottom: 62px;
+  right: 4px;
+  cursor: pointer;
+  font-family: "Arial, Helvetica, sans-serif";
+  font-weight: 900;
+}
+.plus-sign {
+  font-size: 22px;
+  padding-bottom: 3px;
+}
+.xyz {
+  font-size: 32px;
+}
+.addBtnDisable {
+  color: white;
+  background-color: #fd8791;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  position: absolute;
+  bottom: 58px;
+  right: 4px;
+  cursor: pointer;
+  font-family: "Arial, Helvetica, sans-serif";
+  font-weight: 900;
+}
+.cartDesign {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 500px) {
+  .cards {
+    position: relative;
+
+    background-color: white;
+    border-radius: 8px;
+    height: 290px;
+    cursor: pointer;
+  }
+
+  .cardsDisable {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    height: 290px;
+  }
+  .addBtn {
+    color: white;
+    background-color: #ed1b2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 62px;
+    right: 4px;
+    cursor: pointer;
+    font-family: "Arial, Helvetica, sans-serif";
+    font-weight: 900;
+  }
+  .addBtnImage {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    bottom: 62px;
+    right: 4px;
+  }
+}
