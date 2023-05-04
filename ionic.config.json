@@ -1,0 +1,7 @@
+{
+  "name": "Factory-Girl",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

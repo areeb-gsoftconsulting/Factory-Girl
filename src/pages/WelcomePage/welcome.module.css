@@ -1,0 +1,38 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+@media screen and (max-width: 767px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.block {
+  flex: 1;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block1 {
+  background-image: url("../../assets/images/fgBerlin.jpeg");
+}
+
+.block2 {
+  background-image: url("../../assets/images/fgAmsterdam.jpg");
+}
+
+.blockContent {
+  text-align: center;
+}
+.welcomeBtn {
+  --background: #ed1b2d;
+}
+.welcomeBtn:hover {
+  --background: #000000;
+}
