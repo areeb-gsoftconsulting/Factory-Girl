@@ -4,7 +4,7 @@ import { IonIcon } from "@ionic/react";
 import { cart } from "ionicons/icons";
 
 import { trashBin } from "ionicons/icons";
-import "./styles.css";
+import styles from "./cart.module.css";
 import { useContext, useEffect, useState } from "react";
 const RubberBand = require("react-reveal/RubberBand");
 
@@ -14,22 +14,22 @@ const Cart = () => {
   let items = 0;
   let placeOrder = false;
   return (
-    <div className="mainOuterCard">
-      <div className="mainCart">
-        <h1 className="cartLabel">Cart</h1>
+    <div className={styles.mainOuterCard}>
+      <div className={styles.mainCart}>
+        <h1 className={styles.cartLabel}>Cart</h1>
         <IonIcon
           // onClick={() => addItem({ item: [] })}
           slot="start"
           icon={cart}
-          className="cartIcon"
+          className={styles.cartIcon}
         ></IonIcon>
-        <p className="badgeCount">{"9"}</p>
+        <p className={styles.badgeCount}>{"9"}</p>
       </div>
 
-      <IonList className="ListBg">
+      <IonList className={styles.ListBg}>
         <div>
           {/* Map over the userArrays array */}
-          {userArrays.map((userArray: any, index) => (
+          {userArrays.map((userArray: any, index: any) => (
             <div key={index}>
               {/* Map over the current user's items array */}
               {userArray.map((item: any, index: any) => (
@@ -59,7 +59,7 @@ const Cart = () => {
         <div>
           {!placeOrder ? (
             <IonImg
-              className="cartImage"
+              className={styles.cartImage}
               src={
                 "https://www.pngall.com/wp-content/uploads/5/Empty-Red-Shopping-Cart-PNG-Free-Download.png"
               }

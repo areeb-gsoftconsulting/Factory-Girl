@@ -1,6 +1,6 @@
 import { IonCol, IonGrid, IonRow, IonSpinner } from "@ionic/react";
 import { useContext, useState } from "react";
-import "./style.css";
+import styles from "./cardContainer.module.css";
 import noimage from "../../assets/images/noimage.jpeg";
 import Card from ".";
 
@@ -3217,7 +3217,7 @@ const CardsContainer = () => {
   return (
     <IonGrid>
       {loading ? (
-        <div className="spinnerclass">
+        <div className={styles.spinnerclass}>
           <IonSpinner name="circles"></IonSpinner>
         </div>
       ) : (

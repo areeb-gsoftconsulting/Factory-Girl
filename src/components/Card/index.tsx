@@ -1,6 +1,6 @@
 import { IonCol, IonGrid, IonRow, IonSpinner } from "@ionic/react";
 import { useContext, useEffect, useState } from "react";
-import "./style.css";
+import styles from "./cardContainer.module.css";
 import addBtn from "../../assets/images/addBtn.png";
 import addBtnDisable from "../../assets/images/addBtnDisable.png";
 import animationData from "../../animation/ButtonAnimation.json";
@@ -92,29 +92,33 @@ const Card = ({ data, gradient }: any) => {
   }
 
   return (
-    <div className={data.inStock ? "cards" : "cardsDisable"}>
+    <div className={data.inStock ? styles.cards : styles.cardsDisable}>
       <div
         // onClick={() => setShowItem([data?.title])}
-        className="cartDesign"
+        className={styles.cartDesign}
         style={{
           ...gradient,
         }}
       >
-        <div className="cardHeader">
+        <div className={styles.cardHeader}>
           <h1></h1>
           {/* <h6 className="cardCategory">Food</h6> */}
-          <h6 className={data.inStock ? "cardStockAvailable" : "cardStock"}>
+          <h6
+            className={
+              data.inStock ? styles.cardStockAvailable : styles.cardStock
+            }
+          >
             {data.inStock ? "Available" : "Unavailable"}
           </h6>
         </div>
         <div>
-          <h6 className="cardPrice">
+          <h6 className={styles.cardPrice}>
             {/* {resturant?.currencySymbol} */}${data.price[0].price}
           </h6>
         </div>
       </div>
       {animation ? (
-        <div className="addBtn">
+        <div className={styles.addBtn}>
           <Lottie options={defaultOptions} height={30} width={30} />
         </div>
       ) : (
@@ -127,11 +131,11 @@ const Card = ({ data, gradient }: any) => {
           //     ? addItemToCart(items, allMenuItems, data.title, [], [], [], 1)
           //     : setShowItem([data?.title])
           // }
-          className="addBtnImage"
+          className={styles.addBtnImage}
           src={data.inStock ? addBtn : addBtnDisable}
         />
       )}
-      <h6 className="itemTitle">{data?.title}</h6>
+      <h6 className={styles.itemTitle}>{data?.title}</h6>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { IonCardContent, IonLabel } from "@ionic/react";
-import "./style.css";
+import styles from "./cartCard.module.css";
 import noImage from "../../assets/images/noimage.jpeg";
 
 function CartCard({
@@ -21,16 +21,16 @@ function CartCard({
     : 0;
   let totalprice = tempPrice + tempAdone;
   return (
-    <IonCardContent className="cartCard">
+    <IonCardContent className={styles.cartCard}>
       <img
         src={
           image
             ? `https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?cs=srgb&dl=pexels-ash-376464.jpg&fm=jpg`
             : noImage
         }
-        className="cartImg"
+        className={styles.cartImg}
       />
-      <div className="cardContent">
+      <div className={styles.cardContent}>
         <div
           style={{
             display: "flex",
@@ -38,18 +38,18 @@ function CartCard({
             justifyContent: "space-between",
           }}
         >
-          <p className="user">{user}</p>
-          <p className="user">Item: {serialNo}</p>
+          <p className={styles.user}>{user}</p>
+          <p className={styles.user}>Item: {serialNo}</p>
         </div>
-        <IonLabel className="cartItemName">{name}</IonLabel>
-        <p className="extras">
+        <IonLabel className={styles.cartItemName}>{name}</IonLabel>
+        <p className={styles.extras}>
           {selectedSize?.description} {selectedAdone[0]?.name}
         </p>
-        <div className="cartBottom">
-          <p className="price">${totalprice}</p>
-          <div className="cartCardBtn">
+        <div className={styles.cartBottom}>
+          <p className={styles.price}>${totalprice}</p>
+          <div className={styles.cartCardBtn}>
             <button
-              className="btn"
+              className={styles.btn}
               // onClick={() =>
               //   setUpdateItem({
               //     data: data?.title,
@@ -63,7 +63,7 @@ function CartCard({
             </button>
             <p>{quantity}</p>
             <button
-              className="btn"
+              className={styles.btn}
               // onClick={() => increaseQuantity({ item: data })}
             >
               +
