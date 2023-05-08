@@ -13,7 +13,7 @@ const Header: React.FC = () => {
         src={logo}
         alt="The Wisconsin State Capitol building in Madison, WI at night"
       />
-      <h3 className={styles.mainHeading}>Resturant Name</h3>
+      <h3 className={styles.mainHeading}>Factory Girl</h3>
 
       <div className={styles.cartIcon}>
         <img

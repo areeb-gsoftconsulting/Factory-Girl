@@ -15,11 +15,12 @@ function CartCard({
   user,
   serialNo,
 }: any) {
-  let tempPrice = selectedSize?.price ? parseFloat(selectedSize?.price) : 0;
-  let tempAdone = selectedAdone[0]?.price
-    ? parseFloat(selectedAdone[0]?.price)
-    : 0;
-  let totalprice = tempPrice + tempAdone;
+  // let tempPrice = selectedSize?.price ? parseFloat(selectedSize?.price) : 0;
+  // let tempAdone = selectedAdone[0]?.price
+  //   ? parseFloat(selectedAdone[0]?.price)
+  //   : 0;
+  // let totalprice = tempPrice + tempAdone;
+  console.log("namename", name);
   return (
     <IonCardContent className={styles.cartCard}>
       <img
@@ -38,15 +39,15 @@ function CartCard({
             justifyContent: "space-between",
           }}
         >
-          <p className={styles.user}>{user}</p>
-          <p className={styles.user}>Item: {serialNo}</p>
+          <p className={styles.user}>Allen</p>
+          {/* <p className={styles.user}>Item: {serialNo}</p> */}
         </div>
         <IonLabel className={styles.cartItemName}>{name}</IonLabel>
         <p className={styles.extras}>
-          {selectedSize?.description} {selectedAdone[0]?.name}
+          {selectedSize} {selectedAdone}
         </p>
         <div className={styles.cartBottom}>
-          <p className={styles.price}>${totalprice}</p>
+          <p className={styles.price}>${"120"}</p>
           <div className={styles.cartCardBtn}>
             <button
               className={styles.btn}

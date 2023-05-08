@@ -1,7 +1,12 @@
 .micContainer {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   right: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
 }
 .micButton {
   height: 80px;

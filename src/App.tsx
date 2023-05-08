@@ -22,13 +22,16 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import Routes from "./Routes";
+import CartProvider from "./context/cartProvider";
 
 setupIonicReact();
 
 const App: React.FC = () => (
-  <IonApp>
-    <Routes />
-  </IonApp>
+  <CartProvider>
+    <IonApp>
+      <Routes />
+    </IonApp>
+  </CartProvider>
 );
 
 export default App;

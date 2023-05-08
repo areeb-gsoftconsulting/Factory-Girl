@@ -6,12 +6,13 @@ import { cart } from "ionicons/icons";
 import { trashBin } from "ionicons/icons";
 import styles from "./cart.module.css";
 import { useContext, useEffect, useState } from "react";
+import CartContext from "../../context/cartContext";
 const RubberBand = require("react-reveal/RubberBand");
 
 const Cart = () => {
   let [showAnimation, setShowAnimation] = useState(false);
+  const { items } = useContext(CartContext);
   let userArrays: any = [];
-  let items = 0;
   let placeOrder = false;
   return (
     <div className={styles.mainOuterCard}>
@@ -29,33 +30,28 @@ const Cart = () => {
       <IonList className={styles.ListBg}>
         <div>
           {/* Map over the userArrays array */}
-          {userArrays.map((userArray: any, index: any) => (
-            <div key={index}>
-              {/* Map over the current user's items array */}
-              {userArray.map((item: any, index: any) => (
-                <div key={index}>
-                  {/* Render the current item's details */}
-                  <RubberBand>
-                    <CartCard
-                      data={item}
-                      name={item?.title}
-                      image={item?.image}
-                      price={0}
-                      quantity={item?.quantity}
-                      selectedAdone={item?.addons}
-                      selectedFlavour={item?.flavour}
-                      selectedSize={item?.size}
-                      user={item.user}
-                      serialNo={item.serialNo}
-                    />
-                  </RubberBand>
-                </div>
-              ))}
-            </div>
-          ))}
+          {items.map((item: any, index: any) => {
+            console.log("nananan", item, item.itemName);
+            return (
+              <RubberBand>
+                <CartCard
+                  data={item}
+                  name={item?.itemName}
+                  image={item?.image}
+                  price={0}
+                  quantity={item?.quantity}
+                  selectedAdone={item?.extras}
+                  selectedFlavour={item?.flavour}
+                  selectedSize={item?.size}
+                  user={item?.user}
+                  serialNo={item?.serialNo}
+                />
+              </RubberBand>
+            );
+          })}
         </div>
       </IonList>
-      {items > 1 ? null : (
+      {items.length > 1 ? null : (
         <div>
           {!placeOrder ? (
             <IonImg

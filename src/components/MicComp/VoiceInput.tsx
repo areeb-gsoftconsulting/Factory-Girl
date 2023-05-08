@@ -1,8 +1,9 @@
 import { IonButton, IonIcon, IonSpinner } from "@ionic/react";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import { chatApi } from "../../services/chatApi";
 import style from "./style.module.css";
 import { micOffSharp, mic } from "ionicons/icons";
+import CartContext from "../../context/cartContext";
 
 const SpeechRecognition =
   (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -27,6 +28,7 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
   const [volume, setVolume] = useState<any>(1);
   const [previousRes, setPreviousRes] = useState<any>("");
   const [isFirstRender, setIsFirstRender] = useState(true);
+  const { addItem, items } = useContext(CartContext);
 
   /////////////speaking part//////////
   useEffect(() => {
@@ -150,6 +152,11 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
       });
       console.log(data);
       setAnswer(data);
+      if (data?.formatted_order) {
+        addItem({
+          items: [...items, ...data?.formatted_order],
+        });
+      }
       setPreviousRes(data);
       setIsFirstRender(false);
       setLoading(false);
@@ -168,6 +175,7 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
   console.log({ transcript });
 
   const startRecording = useCallback(() => {
+    handleStop();
     recognition.abort();
     onStart();
     setIsRecording(true);
@@ -185,6 +193,11 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
 
   return (
     <div className={style.micContainer}>
+      <p>{!answer?.response && transcript}</p>
+      <br />
+      <br />
+      <p> {!loading && previousRes?.response}</p>
+      {loading && <IonSpinner name="dots" />}
       <div
         className={style.micButton}
         color="danger"
@@ -198,10 +211,6 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
         ></IonIcon>
         {/* <p>{isRecording ? "Stop" : "Start"} Listening</p> */}
       </div>
-
-      <p>{transcript}</p>
-      <p> {!loading && previousRes?.Answer}</p>
-      {loading && <IonSpinner name="dots" />}
     </div>
   );
 };
