@@ -39,7 +39,14 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
     // Add an event listener to the speechSynthesis object to listen for the voiceschanged event
     synth.addEventListener("voiceschanged", () => {
       const voices = synth.getVoices();
-      setVoice(voices[0]);
+      const femaleVoices = voices.filter(
+        (voice: any) => voice.lang == "en-US" && voice.name == "Victoria"
+      );
+      console.log("==>", femaleVoices);
+
+      // Set the default voice to the first female voice in the list
+
+      setVoice(femaleVoices[0]);
     });
 
     return () => {
@@ -62,8 +69,6 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
 
       synth.resume();
     } else {
-      console.log("playyyyy   2");
-
       utterance.voice = voice;
       utterance.pitch = pitch;
       utterance.rate = rate;
@@ -150,7 +155,7 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
         user_id: "0",
         new_chat: isFirstRender ? "1" : "0",
       });
-      console.log(data);
+      console.log("aree==>", data);
       setAnswer(data);
       if (data?.formatted_order) {
         addItem({
@@ -193,10 +198,20 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
 
   return (
     <div className={style.micContainer}>
-      <p>{!answer?.response && transcript}</p>
+      {/* {answer?.response && transcript ? (
+        <p className={style.msg}>{transcript}</p>
+      ) : null} */}
+
+      {transcript && !answer?.response && (
+        <p className={style.msg}>{transcript}</p>
+      )}
       <br />
       <br />
-      <p> {!loading && previousRes?.response}</p>
+      {!loading && previousRes?.response ? (
+        <p className={style.msg}> {previousRes?.response}</p>
+      ) : null}
+
+      {/* <p className={style.msg}> {!loading && previousRes?.response}</p> */}
       {loading && <IonSpinner name="dots" />}
       <div
         className={style.micButton}

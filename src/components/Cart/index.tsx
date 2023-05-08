@@ -24,7 +24,7 @@ const Cart = () => {
           icon={cart}
           className={styles.cartIcon}
         ></IonIcon>
-        <p className={styles.badgeCount}>{"9"}</p>
+        <p className={styles.badgeCount}>{items?.length}</p>
       </div>
 
       <IonList className={styles.ListBg}>
