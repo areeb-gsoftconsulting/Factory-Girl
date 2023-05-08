@@ -18,7 +18,6 @@ const Card = ({ data, gradient }: any) => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  console.log({ animation });
 
   useEffect(() => {
     if (animation) {

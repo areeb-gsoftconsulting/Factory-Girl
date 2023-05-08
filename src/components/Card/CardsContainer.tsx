@@ -3224,7 +3224,6 @@ const CardsContainer = () => {
         <IonRow>
           {menuData.length > 0 ? (
             menuData.map((data: any, index: any) => {
-              console.log({ data });
               const gradient = {
                 background: `linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8)), url(${
                   data?.image
