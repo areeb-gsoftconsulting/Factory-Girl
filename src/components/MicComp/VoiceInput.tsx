@@ -4,6 +4,7 @@ import { chatApi } from "../../services/chatApi";
 import style from "./style.module.css";
 import { micOffSharp, mic } from "ionicons/icons";
 import CartContext from "../../context/cartContext";
+import { useHistory, useLocation } from "react-router-dom";
 
 const SpeechRecognition =
   (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -29,7 +30,19 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
   const [previousRes, setPreviousRes] = useState<any>("");
   const [isFirstRender, setIsFirstRender] = useState(true);
   const { addItem, items } = useContext(CartContext);
+  const location = useLocation();
+  const history = useHistory();
 
+  useEffect(() => {
+    if (location.pathname == "/") {
+      console.log("home");
+      setAnswer({ response: "which resturant you want to go" });
+    }
+    if (transcript && location.pathname == "/") {
+      console.log("<aree>");
+      history.push("/factory-girl");
+    }
+  }, [location, transcript]);
   /////////////speaking part//////////
   useEffect(() => {
     const synth = window.speechSynthesis;
@@ -172,7 +185,7 @@ const VoiceInput: React.FC<Props> = ({ onStart, onStop }) => {
     }
   };
   useEffect(() => {
-    if (transcript.length > 0) {
+    if (transcript.length > 0 && location.pathname !== "/") {
       stopRecording();
       apiCall();
     }

@@ -2,10 +2,22 @@ import { IonContent, IonButton } from "@ionic/react";
 import styles from "./welcome.module.css";
 import { useHistory } from "react-router-dom";
 
+import { useEffect, useState } from "react";
+import VoiceInput from "../../components/MicComp/VoiceInput";
+
 const WelcomePage = () => {
   const history = useHistory();
   const goToResturant = () => {
     history.push("/factory-girl");
+  };
+
+  const [text, setText] = useState("");
+  const handleStart = () => {
+    console.log("Recording started");
+  };
+
+  const handleStop = (inputText: string) => {
+    setText(inputText);
   };
 
   return (
@@ -36,6 +48,7 @@ const WelcomePage = () => {
           </div>
         </div>
       </div>
+      <VoiceInput onStart={handleStart} onStop={handleStop} />
     </IonContent>
   );
 };
